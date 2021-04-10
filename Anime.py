@@ -3,16 +3,12 @@ import re
 class Anime:
 
     name = None
-    genres = []
     rating = None
+    crunchyrollURL = None
+    genres = []
 
-    def __init__(self, name, genres, rating):
+    def __init__(self, name, rating, crunchyrollURL, genres):
         self.name = name
-        self.genres = genres
         self.rating = rating
-
-    def getCrunchyrollURL(self):
-        baseURL = "https://www.crunchyroll.com/"
-        formattedName = re.sub("[-]+", "-", " ".join(re.sub("[^a-zA-Z -]+", "", self.name).split()).replace(" ", "-"))
-        crunchyrollURL = baseURL + formattedName
-        return crunchyrollURL
+        self.crunchyrollURL = crunchyrollURL
+        self.genres = genres
