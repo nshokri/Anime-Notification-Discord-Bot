@@ -38,13 +38,9 @@ class Webscraper:
                 # Get the image for the anime
                 images = soup.find_all('img', class_ = 'portrait')
                 for image in images:
-                    print(image['alt'])
                     if image['alt'] == s:
                         output[-1].image_url = image['src']
-                        print(image['src'])
                         break
-            return
-
 
         #TODO: Might possibly have a query error here
         for i in range(len(output)):
@@ -164,9 +160,7 @@ class Webscraper:
 
                 return ' '.join(prop).strip()
 
-print('aaaaaa')
 w = Webscraper()
 temp = w.get_seasonal_anime(0, 0)
-r = requests.get('https://myanimelist.net/anime/42590')
-soup = BeautifulSoup(r.text, 'lxml')
-print(w.get_property(soup, 'span', 'Score:', 'dark_text', True).split()[0])
+#r = requests.get('https://myanimelist.net/anime/42590')
+#soup = BeautifulSoup(r.text, 'lxml')
