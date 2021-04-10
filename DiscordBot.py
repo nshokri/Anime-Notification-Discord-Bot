@@ -2,35 +2,35 @@ import discord
 import Webscraper as web
 import time
 
-refreshRate = 1
-channelID = 830226925669974056
+REFRESH_RATE = 60
+CHANNEL_ID = 830226925669974056
 
 client = discord.Client()
-newAnimes = []
+anime_list = []
 
 @client.event
 async def on_ready():
     while True:
-        if checkForUpdates():
-            await sendNotifications()
-        time.sleep(refreshRate * 60)
+        if check_for_updates():
+            await send_notifications()
+        time.sleep(REFRESH_RATE)
 
-def checkForUpdates():
-    animes = [1,2] #web.getSeasonalAnime()
-    return len(animes) > 0
+def check_for_updates():
+    anime_list = [1,2] #web.getSeasonalAnime()
+    return len(anime_list) > 0
 
-def createEmbededMessage(name, genres, rating, link, dayAired, timeAired, latestEpisode, image):
+def create_embeded_message(name, genres, rating, link, day_aired, time_aired, latest_episode, image):
 
 
-    embedVar = discord.Embed(title="Episode " + latestEpisode + " of " + name + " Just Came Out!", description="Watch here: " + link, color=0xF78C25)
-    embedVar.add_field(name="__Day Aired__", value=dayAired, inline=True)
-    embedVar.add_field(name="__Time Aired__", value=timeAired, inline=True)
-    embedVar.add_field(name="__Rating__", value=rating * "⭐", inline=True)
-    embedVar.add_field(name="__Genre__", value=genres, inline=True)
-    embedVar.set_image(url = image)
-    return embedVar
+    embed_var = discord.Embed(title="Episode " + latest_episode + " of " + name + " Just Came Out!", description="Watch here: " + link, color=0xF78C25)
+    embed_var.add_field(name="__Day Aired__", value=day_aired, inline=True)
+    embed_var.add_field(name="__Time Aired__", value=time_aired, inline=True)
+    embed_var.add_field(name="__Rating__", value=rating * "⭐", inline=True)
+    embed_var.add_field(name="__Genre__", value=genres, inline=True)
+    embed_var.set_image(url = image)
+    return embed_var
 
-async def sendNotifications():
+async def send_notifications():
     """
     for anime in animes:
         animeLink = anime.getCrunchyrollURL()
@@ -38,8 +38,8 @@ async def sendNotifications():
         animeImage = web.getImageURL(animeLink)
     """
 
-    channel = client.get_channel(channelID)
-    embedMessage = createEmbededMessage("My Hero Academia", "Action, Fantasy, Shonen", 4, "https://www.crunchyroll.com/my-hero-academia/videos", "3/2/20", "7:50 PM", "3", "https://img1.ak.crunchyroll.com/i/spire3/137c90ecc4fae013811fab5275b307791617056778_full.jpg")
-    await channel.send(embed = embedMessage)
+    channel = client.get_channel(CHANNEL_ID)
+    embed_message = create_embeded_message("My Hero Academia", "Action, Fantasy, Shonen", 4, "https://www.crunchyroll.com/my-hero-academia/videos", "3/2/20", "7:50 PM", "3", "https://img1.ak.crunchyroll.com/i/spire3/137c90ecc4fae013811fab5275b307791617056778_full.jpg")
+    await channel.send(embed = embed_message)
 
 client.run("ODMwMjM0MTA1ODk1MTkwNTU5.YHDtww.FiNA3g2KK3luTIXWz1QmLjgPhvQ")
