@@ -1,16 +1,20 @@
 class Anime:
 
     name = None
-    genres = []
-    rating = None
     crunchyrollURL = None
-    timeAired = []
-    dayAired = None
+    genres = None
+    rating = None
+    datetimeAired = None
 
-    def __init__(self, name, rating, crunchyrollURL, genres, timeAired, dayAired):
+    def __init__(self, name, crunchyrollURL):
         self.name = name
-        self.rating = rating
         self.crunchyrollURL = crunchyrollURL
+    
+    def setGenres(self, genres):
         self.genres = genres
-        self.timeAired = timeAired
-        self.dayAired = dayAired
+    
+    def setRating(self, rating):
+        self.rating = rating
+    
+    def setDateTimeAired(self, datetimeAired):
+        self.datetimeAired = datetimeAiredAired
