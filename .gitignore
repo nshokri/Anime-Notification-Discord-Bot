@@ -1,6 +1,8 @@
 # Token
 .config
-AnimeRec
+AnimeRec.*
+/AnimeRec
+AnimeRec/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
