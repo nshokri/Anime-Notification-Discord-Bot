@@ -3,6 +3,7 @@ class Anime:
 
     name = None
     crunchyroll_url = None
+    mal_url = None
     genres = None
     rating = None
     datetime_aired = None
