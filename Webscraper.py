@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 from googlesearch import search
+from helper import parse_datetime
 import requests
 import Anime as anime_card
 import time
@@ -27,23 +28,44 @@ class Webscraper:
                 temp.pop()
                 
                 # Reconstruct title
-                s = ''
-                for n in temp:
-                    s += n + ' '
-                s = s.strip()
+                s = ' '.join(temp).strip()
 
                 url = anime.find('a', class_ = 'portrait-element block-link titlefix')['href']
                 show = anime_card.Anime(s, 'https://www.crunchyroll.com/' + url)
                 output.append(show)
 
 
+                # Get the image for the anime
+                images = soup.find_all('img', class_ = 'portrait')
+                for image in images:
+                    print(image['alt'])
+                    if image['alt'] == s:
+                        output[-1].image_url = image['src']
+                        print(image['src'])
+                        break
+            return
+
+
         #TODO: Might possibly have a query error here
         for i in range(len(output)):
             for n in self.google_search(output[i].name + ' myanimelist'):
                 if (n.find('https://myanimelist.net/anime/') != -1):
-                    
-                    output[i].mal_url = n[0:n.rindex('/')]
-                    output[i].mal_url = self.find_last_season(output[i].mal_url)
+
+                    # Get last season
+                    output[i].mal_url = self.find_last_season(n[0:n.rindex('/')])
+
+                    # Set up new soup for the new MAL page
+                    r = requests.get(output[i].mal_url)
+                    soup = BeautifulSoup(r.text, 'lxml')
+
+                    # Get airing datetime
+                    output[i].datetime_aired = parse_datetime(self.get_air_time(soup), self.get_broadcast_time(soup))
+
+                    # Get rating
+                    output[i].rating = self.get_property(soup, 'span', 'Score:', 'dark_text', True).split()[0]
+
+                    # Get genres
+                    output[i].genres = self.get_property(soup, 'span', 'Genres:', 'dark_text', True)
 
                     print(output[i].mal_url)
                     break
@@ -103,13 +125,48 @@ class Webscraper:
         text = soup.find_all('div', class_ = 'spaceit')
 
         for n in text:
-            if n.find('Aired:') != -1:
-                print(n.text)
+            if n.text.find('Aired:') != -1:
+                aired_date = n.text.split()
+                del aired_date[0]
+
+                return ' '.join(aired_date).strip()
 
 
+    def get_broadcast_time(self, soup) -> str:
+        text = soup.find_all('div', class_ = 'spaceit')
 
+        for n in text:
+            if n.text.find('Broadcast:') != -1:
+                broadcast_time = n.text.split()
+                del broadcast_time[0]
+
+                return ' '.join(broadcast_time).strip()
+    
+    def get_generes(self, soup):
+        text = soup.find_all('div', class_ = 'spaceit')
+
+        for n in text:
+            if n.text.find('Generes:') != -1:
+                generes = n.text.split()
+                del broadcast_time[0]
+
+                return ' '.join(broadcast_time).strip()
+
+    def get_property(self, soup, attribute: str, property: str, style: str, parent: bool):
+        text = soup.find_all(attribute, style)
+
+        for n in text:
+            if n.text.find(property) != -1:
+                prop = n.text.split() if not parent else n.parent.text.split()
+
+                #print(n.parent.text)
+                del prop[0]
+
+                return ' '.join(prop).strip()
+
+print('aaaaaa')
 w = Webscraper()
-#temp = w.get_seasonal_anime(0, 0)
+temp = w.get_seasonal_anime(0, 0)
 r = requests.get('https://myanimelist.net/anime/42590')
 soup = BeautifulSoup(r.text, 'lxml')
-w.get_air_time(soup)
+print(w.get_property(soup, 'span', 'Score:', 'dark_text', True).split()[0])
