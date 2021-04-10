@@ -1,3 +1,4 @@
+
 class Anime:
 
     name = None
@@ -6,10 +7,12 @@ class Anime:
     rating = None
     datetimeAired = None
 
+    # Constructor
     def __init__(self, name, crunchyrollURL):
         self.name = name
         self.crunchyrollURL = crunchyrollURL
     
+    # Setters
     def setGenres(self, genres):
         self.genres = genres
     
@@ -17,4 +20,4 @@ class Anime:
         self.rating = rating
     
     def setDateTimeAired(self, datetimeAired):
-        self.datetimeAired = datetimeAiredAired
+        self.datetimeAired = datetimeAired
