@@ -28,14 +28,11 @@ def parse_datetime(aired, broadcast):
     result_datetime = datetime(year, month, day, hour, minute) - datetime(year, month, day, 14, 30) + datetime(year, month, day)
     return result_datetime
 
-def get_genre_arr():
-    test = "MusicMusic, Slice of LifeSlice of Life, DramaDrama, SchoolSchool, ShounenShounen"
-    genre_arr = test.split(", ")
-    print(genre_arr)
+def get_genre_arr(genres):
+    genre_arr = genres.split(", ")
     for i in range(0, len(genre_arr)):
         genre = genre_arr[i]
-        genre_arr[i] = genre[0:int(len(genre) / 2)]
-    
+        genre_arr[i] = genre[0:int(len(genre) / 2)]  
     return genre_arr
 
 def get_tracked():
