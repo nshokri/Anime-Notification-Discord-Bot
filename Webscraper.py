@@ -64,10 +64,11 @@ class Webscraper:
                     # Remove once out of loop
                     if self.get_property(soup, 'span', 'Type:', 'dark_text', True).find('TV') == -1 or self.get_property(soup, 'div', 'Aired:', 'spaceit', False) == None or self.get_property(soup, 'div', 'Broadcast:', 'spaceit', False) == None:
                         remove_after.append(i)
+                        '''
                         print('Removing: ' + str(i))
                         print(self.get_property(soup, 'span', 'Type:', 'dark_text', True).find('TV') == -1)
                         print(self.get_property(soup, 'div', 'Aired:', 'spaceit', False) == None)
-                        print(self.get_property(soup, 'div', 'Broadcast:', 'spaceit', False) == None)
+                        print(self.get_property(soup, 'div', 'Broadcast:', 'spaceit', False) == None)'''
                         break
 
                     # Get airing datetime
@@ -81,13 +82,13 @@ class Webscraper:
                     # Get genres
                     output[i].genres = get_genre_arr(self.get_property(soup, 'span', 'Genres:', 'dark_text', True))
 
-                    print(output[i].mal_url)
+                    #print(output[i].mal_url)
                     found = True
                     break
             
             if not found:
                 remove_after.append(i)
-                print('Remove 2: ' + str(i))
+                #print('Remove 2: ' + str(i))
 
         # Recreate array, ignoring elements that should have been removed
         new_output = []
@@ -97,7 +98,7 @@ class Webscraper:
         output = new_output
 
         # Scrape MAL for genere, airing time, etc.
-
+        '''
         for i in range(len(output)):
             print('------------------------------------------------------------------')
             print('Name: ' + output[i].name)
@@ -113,7 +114,16 @@ class Webscraper:
 
         print('Total runtime: ', end = ' ')
         print(datetime.now() - start)
-        print('Anime Count: ' + str(len(output)))
+        print('Anime Count: ' + str(len(output)))'''
+
+        '''
+        test_anime = Anime('Mashiro no Oto', 'https://myanimelist.net/anime/42590/Mashiro_no_Oto/episode')
+        test_anime.mal_url = 'https://myanimelist.net/anime/42590/Mashiro_no_Oto/episode'
+        test_anime.crunchyroll_url = 'https://www.crunchyroll.com/those-snow-white-notes'
+        test_anime.rating = '5.65'
+        test_anime.genre = [Music, Slice of Life, Drama, School, Shounen]
+        test_anime.datetime_aired
+        output.append()'''
 
         return output
         
