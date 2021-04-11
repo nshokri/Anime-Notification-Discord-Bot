@@ -25,3 +25,9 @@ Make sure you have Python 3.9 or higher
 
 Type in command line:\
 **pip install -r requirements.txt**
+
+Getting a Discord API key:
+1) Go to Discord developer portal
+2) Create new application
+3) In app, go to bots tab, create a new bot
+4) Click "Copy Token" for the new bot
