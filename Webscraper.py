@@ -231,7 +231,13 @@ class Webscraper:
         test_anime.genres = ['Music', 'Slice of Life', 'Drama', 'School', 'Shounen']
         test_anime.datetime_aired = (datetime.datetime.now() + datetime.timedelta(minutes=1)).replace(second=0, microsecond=0)
 
-        return [test_anime]
+        test_anime2 = anime_card.Anime('BORUTO: NARUTO NEXT GENERATIONS', 'https://myanimelist.net/anime/42590/Mashiro_no_Oto/episode')
+        test_anime2.mal_url = 'https://myanimelist.net/anime/34566/Boruto__Naruto_Next_Generations'
+        test_anime2.crunchyroll_url = 'https://www.crunchyroll.com//boruto-naruto-next-generations'
+        test_anime2.image_url = 'https://img1.ak.crunchyroll.com/i/spire4/7dde3a40ce5d5615813a5ac12683631a1616450115_thumb.jpg'
+        test_anime2.rating = '5.791'
+        test_anime2.genres = ['Action', 'Adventure', 'Super Power', 'Martial Arts', 'Shounen']
+        test_anime2.datetime_aired = (datetime.datetime.now() + datetime.timedelta(minutes=1)).replace(second=0, microsecond=0)
 
 w = Webscraper()
 
