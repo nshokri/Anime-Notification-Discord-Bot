@@ -4,21 +4,21 @@ from Webscraper import Webscraper
 import time
 import helper
 
-REFRESH_RATE = 60
+REFRESH_RATE = 5
 CHANNEL_ID = 830690599447035914
 TOKEN = "ODMwMjM0MTA1ODk1MTkwNTU5.YHDtww.FiNA3g2KK3luTIXWz1QmLjgPhvQ"
 
 client = discord.Client()
 ws = Webscraper()
-anime_list = ws.get_seasonal_anime(0, 0)
+#anime_list = ws.get_seasonal_anime(0, 0)
 
 @client.event
 async def on_ready():
     print("Bot is online")
-    check_for_updates.start()
+    #check_for_updates.start()
 
 @tasks.loop(seconds = REFRESH_RATE)
-async def check_for_updates():
+async def check_for_updates(anime_list):
     filtered_anime = helper.filter_by_genre(anime_list, helper.get_filters())
     print("filtered: ", end=" ")
     print(filtered_anime)
@@ -86,6 +86,10 @@ async def on_message(message):
             await message.channel.send("*No longer including* **" + genre + "** *in filter*")
         else:
             await message.channel.send("**" + genre + "** *is not currently included in filter*")
+
+    elif command.startswith("!test"):
+        await message.channel.send("*Queuing 2 animes to air in 1 minute*")
+        check_for_updates.start(ws.dummy())
 
     elif command.startswith("!help"):
         embed_var = discord.Embed(title="Current Command List", description="", color=0xF78C25)
