@@ -124,3 +124,13 @@ def just_aired(anime):
     anime_air_time = anime.datetime_aired.time()
 
     return curr_day == anime_air_day and curr_time == anime_air_time
+
+def get_last_episode(self, anime):
+    episodes = 0
+    curr_datetime = anime.datetime_aired
+
+    while curr_datetime.date() < datetime.datetime.now().date():
+        episodes += 1
+        curr_datetime += datetime.timedelta(days=7)
+
+    return str(episodes)

@@ -48,7 +48,7 @@ async def send_notifications(anime):
             genres += ", "
 
     channel = client.get_channel(CHANNEL_ID)
-    embed_message = create_embeded_message(anime.name, genres, anime.rating, anime.crunchyroll_url, date, time, "3", anime.image_url)
+    embed_message = create_embeded_message(anime.name, genres, anime.rating, anime.crunchyroll_url, date, time, helper.get_last_episode(anime), anime.image_url)
     await channel.send(embed = embed_message)
 
 @client.event

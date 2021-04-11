@@ -210,18 +210,6 @@ class Webscraper:
                 return ' '.join(broadcast_time).strip()
     '''
 
-    def get_last_episode(self, anime) -> str:
-        episodes = 0
-        curr_datetime = anime.datetime_aired
-
-        while curr_datetime.date() < datetime.datetime.now().date():
-            episodes += 1
-            curr_datetime += datetime.timedelta(days=7)
-
-        return str(episodes)
-
-
-
     def get_property(self, soup, attribute: str, property: str, style: str, parent: bool):
         text = soup.find_all(attribute, style)
         
