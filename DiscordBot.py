@@ -4,7 +4,7 @@ from Webscraper import Webscraper
 import time
 import helper
 
-REFRESH_RATE = 5
+REFRESH_RATE = 10
 CHANNEL_ID = 830690599447035914
 TOKEN = "ODMwMjM0MTA1ODk1MTkwNTU5.YHDtww.FiNA3g2KK3luTIXWz1QmLjgPhvQ"
 
