@@ -1,6 +1,6 @@
 # Anime-Notification-Discord-Bot
 
-<img src="img/capture.png">
+<img src="img/capture.PNG">
 
 # Project Goals
 Create a live-time notification bot that lets users know when a new episode of their favorite show is available to view.
