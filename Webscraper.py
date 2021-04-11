@@ -229,7 +229,7 @@ class Webscraper:
         test_anime.image_url = 'https://img1.ak.crunchyroll.com/i/spire3/805fabf56ab70842766d76c1a50cf2061617327655_thumb.jpg'
         test_anime.rating = '5.65'
         test_anime.genres = ['Music', 'Slice of Life', 'Drama', 'School', 'Shounen']
-        test_anime.datetime_aired = (datetime.datetime.now() + datetime.timedelta(minutes=1)).replace(second=0, microsecond=0)
+        test_anime.datetime_aired = (datetime.datetime.now() + datetime.timedelta(seconds=10)).replace(second=0, microsecond=0)
 
         test_anime2 = anime_card.Anime('BORUTO: NARUTO NEXT GENERATIONS', 'https://myanimelist.net/anime/42590/Mashiro_no_Oto/episode')
         test_anime2.mal_url = 'https://myanimelist.net/anime/34566/Boruto__Naruto_Next_Generations'
@@ -237,7 +237,7 @@ class Webscraper:
         test_anime2.image_url = 'https://img1.ak.crunchyroll.com/i/spire4/7dde3a40ce5d5615813a5ac12683631a1616450115_thumb.jpg'
         test_anime2.rating = '5.791'
         test_anime2.genres = ['Action', 'Adventure', 'Super Power', 'Martial Arts', 'Shounen']
-        test_anime2.datetime_aired = (datetime.datetime.now() + datetime.timedelta(minutes=1)).replace(second=0, microsecond=0)
+        test_anime2.datetime_aired = (datetime.datetime.now() + datetime.timedelta(seconds=10)).replace(second=0, microsecond=0)
 
         result = []
         result.append(test_anime)
@@ -246,7 +246,8 @@ class Webscraper:
 
 '''
 w = Webscraper()
-
+print(w.dummy())'''
+'''
 #temp = w.get_seasonal_anime(0, 0)
 
 test_anime = anime_card.Anime('Those Snow White Notes', 'https://myanimelist.net/anime/42590/Mashiro_no_Oto/episode')
