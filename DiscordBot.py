@@ -5,7 +5,7 @@ import time
 import helper
 
 REFRESH_RATE = 10
-CHANNEL_ID = 830690599447035914
+CHANNEL_ID = 830901954963963934
 TOKEN = "ODMwMjM0MTA1ODk1MTkwNTU5.YHDtww.FiNA3g2KK3luTIXWz1QmLjgPhvQ"
 
 client = discord.Client()
@@ -41,7 +41,7 @@ def create_embeded_message(name, genres, rating, link, day_aired, time_aired, la
 
 async def send_notifications(anime):
 
-    date = anime.datetime_aired.strftime("%d/%m/%y")
+    date = anime.datetime_aired.strftime("%m/%d/%y")
     time = anime.datetime_aired.strftime("%I:%M %p")
     genres = ""
     if anime.genres != None:
