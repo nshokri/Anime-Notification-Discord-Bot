@@ -239,6 +239,11 @@ class Webscraper:
         test_anime2.genres = ['Action', 'Adventure', 'Super Power', 'Martial Arts', 'Shounen']
         test_anime2.datetime_aired = (datetime.datetime.now() + datetime.timedelta(minutes=1)).replace(second=0, microsecond=0)
 
+        result = []
+        result.append(test_anime)
+        result.append(test_anime2)
+        return result
+
 w = Webscraper()
 
 #temp = w.get_seasonal_anime(0, 0)
@@ -252,7 +257,6 @@ test_anime.genre = ['Music', 'Slice of Life', 'Drama', 'School', 'Shounen']
 test_anime.datetime_aired = datetime.datetime(2020, 10, 3, 1, 25)
 
 
-print(w.get_last_episode(test_anime))
 '''
 #r = requests.get('https://myanimelist.net/manga/99884/Thunderbolt_Fantasy__Touriken_Yuuki')
 #soup = BeautifulSoup(r.text, 'lxml')
@@ -264,3 +268,4 @@ print(w.get_last_episode(test_anime))
 #print(w.get_property(soup, 'div', 'Aired:', 'spaceit', False))
 #print(w.get_property(soup, 'div', 'Broadcast:', 'spaceit', False))
 #print(parse_datetime(, self.get_property(soup, 'span', 'Broadcast:', 'dark_text', False)))
+'''

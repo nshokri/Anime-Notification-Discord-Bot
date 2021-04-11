@@ -29,10 +29,10 @@ async def check_for_updates():
             await send_notifications(anime)
 
 def create_embeded_message(name, genres, rating, link, day_aired, time_aired, latest_episode, image):
-    embed_var = discord.Embed(title="Episode " + latest_episode + " of " + name + " Just Came Out!", description="Watch here: " + link, color=0xF78C25)
+    embed_var = discord.Embed(title="Episode " + latest_episode + " of \"" + name + "\" Just Came Out!", description="Watch here: " + link, color=0xF78C25)
     embed_var.add_field(name="__Day Aired__", value=day_aired, inline=True)
     embed_var.add_field(name="__Time Aired__", value=time_aired, inline=True)
-    embed_var.add_field(name="__Rating (" + str(float(rating) / 2) + ")__", value=round(float(rating) / 2) * "⭐", inline=True)
+    embed_var.add_field(name="__Rating (" + str(float(rating) / 2) + "/5)__", value=round(float(rating) / 2) * "⭐", inline=True)
     embed_var.add_field(name="__Genre__", value=genres, inline=True)
     embed_var.set_image(url = image)
     return embed_var
@@ -48,7 +48,7 @@ async def send_notifications(anime):
             genres += ", "
 
     channel = client.get_channel(CHANNEL_ID)
-    embed_message = create_embeded_message(anime.name, genres, anime.rating, anime.crunchyroll_url, date, time, helper.get_last_episode(anime), anime.image_url)
+    embed_message = create_embeded_message(anime.name, genres, anime.rating, anime.crunchyroll_url, date, time, str(helper.get_last_episode(anime)), anime.image_url)
     await channel.send(embed = embed_message)
 
 @client.event

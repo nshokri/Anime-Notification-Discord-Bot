@@ -1,4 +1,4 @@
 {
     "python.formatting.autopep8Path": "",
-    "python.pythonPath": "AnimeRec\\Scripts\\python.exe"
+    "python.pythonPath": "venv\\Scripts\\python.exe"
 }
