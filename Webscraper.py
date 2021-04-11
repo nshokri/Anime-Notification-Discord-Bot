@@ -209,16 +209,22 @@ class Webscraper:
 
                 return ' '.join(broadcast_time).strip()
     '''
-    '''
-    def get_last_episode(self, anime) -> int:
+    
+    def get_last_episode(self, anime) -> str:
         
-        cur = datetime.now.date()
+        cur = datetime.datetime.now()
+        '''
+        print('cur: ', end=' ')
+        print(cur)
+
+        print('anime: ', end=' ')
+        print(anime.datetime_aired)'''
         episode = 0
-        while cur < anime.datetime_aired.date():
-            cur += datetime.timedelta(days=7)
+        while cur < anime.datetime_aired:
+            cur += datetime.datetime.timedelta(days=7)
             episode += 1
         
-        return episode'''
+        return str(episode)
 
 
 
@@ -240,20 +246,23 @@ class Webscraper:
         test_anime.crunchyroll_url = 'https://www.crunchyroll.com/those-snow-white-notes'
         test_anime.image_url = 'https://img1.ak.crunchyroll.com/i/spire3/805fabf56ab70842766d76c1a50cf2061617327655_thumb.jpg'
         test_anime.rating = '5.65'
-        test_anime.genre = ['Music', 'Slice of Life', 'Drama', 'School', 'Shounen']
+        test_anime.genres = ['Music', 'Slice of Life', 'Drama', 'School', 'Shounen']
         test_anime.datetime_aired = (datetime.datetime.now() + datetime.timedelta(minutes=1)).replace(second=0, microsecond=0)
-
+#
         return [test_anime]
 
 #w = Webscraper()
+
 #temp = w.get_seasonal_anime(0, 0)
 '''
-test_anime = anime_card.Anime('Mashiro no Oto', 'https://myanimelist.net/anime/42590/Mashiro_no_Oto/episode')
+test_anime = anime_card.Anime('Those Snow White Notes', 'https://myanimelist.net/anime/42590/Mashiro_no_Oto/episode')
 test_anime.mal_url = 'https://myanimelist.net/anime/42590/Mashiro_no_Oto/episode'
 test_anime.crunchyroll_url = 'https://www.crunchyroll.com/those-snow-white-notes'
+test_anime.image_url = 'https://img1.ak.crunchyroll.com/i/spire3/805fabf56ab70842766d76c1a50cf2061617327655_thumb.jpg'
 test_anime.rating = '5.65'
 test_anime.genre = ['Music', 'Slice of Life', 'Drama', 'School', 'Shounen']
-test_anime.datetime_aired = date(2021, 4, 9)
+test_anime.datetime_aired = datetime(2021, 4, 9, 0, 0, 0)
+
 
 print(w.get_last_episode(test_anime))'''
 
