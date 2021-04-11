@@ -6,6 +6,10 @@ AnimeRec/
 venv.*
 /venv
 venv/
+.vscode
+*.vscode
+.google-cookie
+*.google-cookie
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
