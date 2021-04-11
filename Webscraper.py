@@ -224,21 +224,23 @@ class Webscraper:
                 return ' '.join(prop).strip()
 
     def dummy(self):
-        test_anime = anime_card.Anime('Those Snow White Notes', 'https://myanimelist.net/anime/42590/Mashiro_no_Oto/episode')
-        test_anime.mal_url = 'https://myanimelist.net/anime/42590/Mashiro_no_Oto/episode'
-        test_anime.crunchyroll_url = 'https://www.crunchyroll.com/those-snow-white-notes'
-        test_anime.image_url = 'https://img1.ak.crunchyroll.com/i/spire3/805fabf56ab70842766d76c1a50cf2061617327655_thumb.jpg'
-        test_anime.rating = '5.65'
-        test_anime.genres = ['Music', 'Slice of Life', 'Drama', 'School', 'Shounen']
+        test_anime = anime_card.Anime('One Piece', 'https://myanimelist.net/anime/21/One_Piece')
+        test_anime.mal_url = 'https://myanimelist.net/anime/21/One_Piece'
+        test_anime.crunchyroll_url = 'https://www.crunchyroll.com/one-piece'
+        test_anime.image_url = 'https://img1.ak.crunchyroll.com/i/spire4/8056a82e973dde98ebb82abd39dc69731564519729_full.jpg'
+        test_anime.rating = '8.53'
+        test_anime.genres = ['Action', 'Adventure', 'Comedy', 'Super Power', 'Drama', 'Fantasy', 'Shounen']
         test_anime.datetime_aired = (datetime.datetime.now() + datetime.timedelta(minutes=1)).replace(second=0, microsecond=0)
+        test_anime.episode = 969
 
-        test_anime2 = anime_card.Anime('BORUTO: NARUTO NEXT GENERATIONS', 'https://myanimelist.net/anime/42590/Mashiro_no_Oto/episode')
-        test_anime2.mal_url = 'https://myanimelist.net/anime/34566/Boruto__Naruto_Next_Generations'
-        test_anime2.crunchyroll_url = 'https://www.crunchyroll.com//boruto-naruto-next-generations'
-        test_anime2.image_url = 'https://img1.ak.crunchyroll.com/i/spire4/7dde3a40ce5d5615813a5ac12683631a1616450115_thumb.jpg'
-        test_anime2.rating = '5.791'
-        test_anime2.genres = ['Action', 'Adventure', 'Super Power', 'Martial Arts', 'Shounen']
+        test_anime2 = anime_card.Anime('My Hero Academia', 'https://myanimelist.net/anime/41587/Boku_no_Hero_Academia_5th_Season')
+        test_anime2.mal_url = 'https://myanimelist.net/anime/41587/Boku_no_Hero_Academia_5th_Season'
+        test_anime2.crunchyroll_url = 'https://www.crunchyroll.com/my-hero-academia'
+        test_anime2.image_url = 'https://img1.ak.crunchyroll.com/i/spire3/137c90ecc4fae013811fab5275b307791617056778_full.jpg'
+        test_anime2.rating = '7.68'
+        test_anime2.genres = ['Action', 'Comedy', 'Super Power', 'School', 'Shounen']
         test_anime2.datetime_aired = (datetime.datetime.now() + datetime.timedelta(minutes=1)).replace(second=0, microsecond=0)
+        test_anime2.episode = 91
 
         result = []
         result.append(test_anime)

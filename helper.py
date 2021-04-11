@@ -129,6 +129,9 @@ def get_last_episode(anime):
     episodes = 0
     curr_datetime = anime.datetime_aired
 
+    if anime.episode != None:
+        return anime.episode
+
     while curr_datetime.date() < datetime.datetime.now().date():
         episodes += 1
         curr_datetime += datetime.timedelta(days=7)
