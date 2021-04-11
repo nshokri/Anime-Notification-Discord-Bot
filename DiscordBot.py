@@ -4,14 +4,13 @@ from Webscraper import Webscraper
 import time
 import helper
 
-REFRESH_RATE = 10
-CHANNEL_ID = 830636491582996490
+REFRESH_RATE = 60
+CHANNEL_ID = 830690599447035914
 TOKEN = "ODMwMjM0MTA1ODk1MTkwNTU5.YHDtww.FiNA3g2KK3luTIXWz1QmLjgPhvQ"
 
 client = discord.Client()
 ws = Webscraper()
-anime_list = ws.dummy()
-i = 0
+anime_list = ws.get_seasonal_anime(0, 0)
 
 @client.event
 async def on_ready():
@@ -60,21 +59,37 @@ async def on_message(message):
     if command.startswith("!track"):
         anime_name = command[int(command.index(" ") + 1):]
         if helper.add_tracked(anime_name):
-            await message.channel.send("*Now Tracking:* " + "**" + anime_name + "**")
+            await message.channel.send("*Now Tracking* " + "**" + anime_name + "**")
         else:
             await message.channel.send("**" + anime_name + "** *is already being tracked*")
     
     elif command.startswith("!untrack"):
         anime_name = command[int(command.index(" ") + 1):]
         if helper.remove_tracked(anime_name):
-            await message.channel.send("*No Longer Tracking:* " + "**" + anime_name + "**")
+            await message.channel.send("*No Longer Tracking* " + "**" + anime_name + "**")
         else:
             await message.channel.send("**" + anime_name + "** *is not currently being tracked*")
 
+    elif command.startswith("!addg"):
+        genre = command[int(command.index(" ") + 1):]
+        if helper.add_filter(genre):
+            await message.channel.send("*Now including* **" + genre + "** *in filter*")
+        else:
+            await message.channel.send("**" + genre + "** *is already included in filter*")
+    
+    elif command.startswith("!removeg"):
+        genre = command[int(command.index(" ") + 1):]
+        if helper.remove_filter(genre):
+            await message.channel.send("*No longer including* **" + genre + "** *in filter*")
+        else:
+            await message.channel.send("**" + genre + "** *is not currently included in filter*")
+
     elif command.startswith("!help"):
         embed_var = discord.Embed(title="Current Command List", description="", color=0xF78C25)
-        embed_var.add_field(name="```!track [Anime Name]```", value="Tracks an anime and notifies the server when a new episode comes out", inline=True)
-        embed_var.add_field(name="```!untrack [Anime Name]```", value="Removes an anime from tracking list", inline=True)
+        embed_var.add_field(name="```!track [Anime Name]```", value="Tracks an anime and notifies the server when a new episode comes out", inline=False)
+        embed_var.add_field(name="```!untrack [Anime Name]```", value="Removes an anime from tracking list", inline=False)
+        embed_var.add_field(name="```!addg [Genre]```", value="Adds a genre to the filter", inline=False)
+        embed_var.add_field(name="```!removeg [Genre]```", value="Removes a genre to the filter", inline=False)
         await message.channel.send(embed = embed_var)
 
 client.run(TOKEN)
