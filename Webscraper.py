@@ -49,7 +49,6 @@ class Webscraper:
         remove_after = []
         for i in range(len(output)):
             search = self.google_search(output[i].name + ' myanimelist')
-            print(search)
             found = False
 
             for n in search:
@@ -114,7 +113,7 @@ class Webscraper:
 
         print('Total runtime: ', end = ' ')
         print(datetime.now() - start)
-        print('Anime Count: ' + len(output))
+        print('Anime Count: ' + str(len(output)))
 
         return output
         
