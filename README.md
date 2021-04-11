@@ -17,7 +17,7 @@ Create a live-time notification bot that lets users know when a new episode of t
 `lxml`\
 `google`\
 `requests`\
-`discord.py
+`discord.py`
 
 Used "requests", "beatifulsoup4". and "lxml" for web scraping and parsing html data from Crunchyroll and MyAnimeList. Used "google" for doing google queries.
 
