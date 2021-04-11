@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 from googlesearch import search
 from helper import parse_datetime, get_genre_arr
-from datetime import datetime
+import datetime
 import requests
 import Anime as anime_card
 import time
@@ -14,9 +14,21 @@ class Webscraper:
     # Currently params don't do anything
     def get_seasonal_anime(self, season, year):
         #TODO: DEL ME
-        start = datetime.now()
+        start = datetime.datetime.now()
 
         output = [] 
+        
+        #-------------------------------       
+        test_anime = anime_card.Anime('Those Snow White Notes', 'https://myanimelist.net/anime/42590/Mashiro_no_Oto/episode')
+        test_anime.mal_url = 'https://myanimelist.net/anime/42590/Mashiro_no_Oto/episode'
+        test_anime.crunchyroll_url = 'https://www.crunchyroll.com/those-snow-white-notes'
+        test_anime.image_url = 'https://img1.ak.crunchyroll.com/i/spire3/805fabf56ab70842766d76c1a50cf2061617327655_thumb.jpg'
+        test_anime.rating = '5.65'
+        test_anime.genre = ['Music', 'Slice of Life', 'Drama', 'School', 'Shounen']
+        test_anime.datetime_aired = (datetime.datetime.now() + datetime.timedelta(minutes=1)).replace(second=0, microsecond=0)
+
+        output.append(test_anime)
+        #-------------------------------------
         with open('Crunchyroll.html', 'rb') as html_file:
 
             content = html_file.read()
@@ -113,17 +125,8 @@ class Webscraper:
             print('------------------------------------------------------------------\n\n\n')
 
         print('Total runtime: ', end = ' ')
-        print(datetime.now() - start)
+        print(datetime.datetime.now() - start)
         print('Anime Count: ' + str(len(output)))'''
-
-        '''
-        test_anime = Anime('Mashiro no Oto', 'https://myanimelist.net/anime/42590/Mashiro_no_Oto/episode')
-        test_anime.mal_url = 'https://myanimelist.net/anime/42590/Mashiro_no_Oto/episode'
-        test_anime.crunchyroll_url = 'https://www.crunchyroll.com/those-snow-white-notes'
-        test_anime.rating = '5.65'
-        test_anime.genre = [Music, Slice of Life, Drama, School, Shounen]
-        test_anime.datetime_aired
-        output.append()'''
 
         return output
         
@@ -205,6 +208,18 @@ class Webscraper:
 
                 return ' '.join(broadcast_time).strip()
     '''
+    '''
+    def get_last_episode(self, anime) -> int:
+        
+        cur = datetime.now.date()
+        episode = 0
+        while cur < anime.datetime_aired.date():
+            cur += datetime.timedelta(days=7)
+            episode += 1
+        
+        return episode'''
+
+
 
     def get_property(self, soup, attribute: str, property: str, style: str, parent: bool):
         text = soup.find_all(attribute, style)
@@ -218,8 +233,18 @@ class Webscraper:
 
                 return ' '.join(prop).strip()
 
-w = Webscraper()
-temp = w.get_seasonal_anime(0, 0)
+#w = Webscraper()
+#temp = w.get_seasonal_anime(0, 0)
+'''
+test_anime = anime_card.Anime('Mashiro no Oto', 'https://myanimelist.net/anime/42590/Mashiro_no_Oto/episode')
+test_anime.mal_url = 'https://myanimelist.net/anime/42590/Mashiro_no_Oto/episode'
+test_anime.crunchyroll_url = 'https://www.crunchyroll.com/those-snow-white-notes'
+test_anime.rating = '5.65'
+test_anime.genre = ['Music', 'Slice of Life', 'Drama', 'School', 'Shounen']
+test_anime.datetime_aired = date(2021, 4, 9)
+
+print(w.get_last_episode(test_anime))'''
+
 #r = requests.get('https://myanimelist.net/manga/99884/Thunderbolt_Fantasy__Touriken_Yuuki')
 #soup = BeautifulSoup(r.text, 'lxml')
 
