@@ -125,7 +125,7 @@ def just_aired(anime):
 
     return curr_day == anime_air_day and curr_time == anime_air_time
 
-def get_last_episode(self, anime):
+def get_last_episode(anime):
     episodes = 0
     curr_datetime = anime.datetime_aired
 
