@@ -41,10 +41,11 @@ async def send_notifications(anime):
     date = anime.datetime_aired.strftime("%d/%m/%y")
     time = anime.datetime_aired.strftime("%I:%M %p")
     genres = ""
-    for i in range(0, len(anime.genres)):
-        genres += anime.genres[i]
-        if i != len(anime.genres) - 1:
-            genres += ", "
+    if anime.genres != None:
+        for i in range(0, len(anime.genres)):
+            genres += anime.genres[i]
+            if i != len(anime.genres) - 1:
+                genres += ", "
 
     channel = client.get_channel(CHANNEL_ID)
     embed_message = create_embeded_message(anime.name, genres, anime.rating, anime.crunchyroll_url, date, time, str(helper.get_last_episode(anime)), anime.image_url)
