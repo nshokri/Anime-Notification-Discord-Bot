@@ -1,4 +1,4 @@
-# Anime-Recommendation-Discord-Bot
+# Anime-Notification-Discord-Bot
 
 
 # Implementation Detais
