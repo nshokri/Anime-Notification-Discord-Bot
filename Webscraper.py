@@ -209,19 +209,6 @@ class Webscraper:
 
                 return ' '.join(broadcast_time).strip()
     '''
-    
-    def get_last_episode(self, anime) -> str:
-        
-        cur = anime.datetime_aired
-        
-        episode = 0
-        while datetime.datetime.now() > cur:
-            cur.time += datetime.datetime.timedelta(days=7)
-            episode += 1
-        
-        return str(episode + 1)
-
-
 
     def get_property(self, soup, attribute: str, property: str, style: str, parent: bool):
         text = soup.find_all(attribute, style)
@@ -256,11 +243,11 @@ test_anime.crunchyroll_url = 'https://www.crunchyroll.com/those-snow-white-notes
 test_anime.image_url = 'https://img1.ak.crunchyroll.com/i/spire3/805fabf56ab70842766d76c1a50cf2061617327655_thumb.jpg'
 test_anime.rating = '5.65'
 test_anime.genre = ['Music', 'Slice of Life', 'Drama', 'School', 'Shounen']
-test_anime.datetime_aired = datetime.datetime(1999, 10, 20, 0, 0)
+test_anime.datetime_aired = datetime.datetime(2020, 10, 3, 1, 25)
 
 
 print(w.get_last_episode(test_anime))
-
+'''
 #r = requests.get('https://myanimelist.net/manga/99884/Thunderbolt_Fantasy__Touriken_Yuuki')
 #soup = BeautifulSoup(r.text, 'lxml')
 

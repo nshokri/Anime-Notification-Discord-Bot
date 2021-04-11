@@ -5,31 +5,20 @@ import time
 import helper
 
 REFRESH_RATE = 60
-CHANNEL_ID = 830226925669974056
+CHANNEL_ID = 830636491582996490
 TOKEN = "ODMwMjM0MTA1ODk1MTkwNTU5.YHDtww.FiNA3g2KK3luTIXWz1QmLjgPhvQ"
 
 client = discord.Client()
 ws = Webscraper()
 anime_list = ws.dummy()
 i = 0
-print('------------------------------------------------------------------')
-print('Name: ' + anime_list[i].name)
-print('Airing Time: ', end = ' ')
-print(anime_list[i].datetime_aired)
-print('Genres:', end =' ')
-print(anime_list[i].genres)
-print('Ratings: ' + anime_list[i].rating)
-print('MAL URL: ' + anime_list[i].mal_url)
-print('Crunchyroll URL: ' + anime_list[i].crunchyroll_url)
-print('Image URL: ' + anime_list[i].image_url)
-print('------------------------------------------------------------------\n\n\n')
 
 @client.event
 async def on_ready():
     print("Bot is online")
     check_for_updates.start()
 
-@tasks.loop(seconds = 15)
+@tasks.loop(seconds = 60)
 async def check_for_updates():
      filtered_anime = helper.filter_by_genre(anime_list, helper.get_filters())
      print("filtered: ", end=" ")
@@ -52,9 +41,14 @@ async def send_notifications(anime):
 
     date = anime.datetime_aired.strftime("%d/%m/%y")
     time = anime.datetime_aired.strftime("%I:%M %p")
+    genres = ""
+    for i in range(0, len(anime.genres)):
+        genres += anime.genres[i]
+        if i != len(anime.genres) - 1:
+            genres += ", "
 
     channel = client.get_channel(CHANNEL_ID)
-    embed_message = create_embeded_message(anime.name, anime.genres, anime.rating, anime.crunchyroll_url, date, time, "3", anime.image_url)
+    embed_message = create_embeded_message(anime.name, genres, anime.rating, anime.crunchyroll_url, date, time, helper.get_last_episode(anime), anime.image_url)
     await channel.send(embed = embed_message)
 
 @client.event
