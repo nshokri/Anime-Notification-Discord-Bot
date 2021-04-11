@@ -10,7 +10,19 @@ TOKEN = "ODMwMjM0MTA1ODk1MTkwNTU5.YHDtww.FiNA3g2KK3luTIXWz1QmLjgPhvQ"
 
 client = discord.Client()
 ws = Webscraper()
-anime_list = ws.get_seasonal_anime(0, 0)
+anime_list = ws.dummy()
+i = 0
+print('------------------------------------------------------------------')
+print('Name: ' + anime_list[i].name)
+print('Airing Time: ', end = ' ')
+print(anime_list[i].datetime_aired)
+print('Genres:', end =' ')
+print(anime_list[i].genres)
+print('Ratings: ' + anime_list[i].rating)
+print('MAL URL: ' + anime_list[i].mal_url)
+print('Crunchyroll URL: ' + anime_list[i].crunchyroll_url)
+print('Image URL: ' + anime_list[i].image_url)
+print('------------------------------------------------------------------\n\n\n')
 
 @client.event
 async def on_ready():
@@ -20,28 +32,29 @@ async def on_ready():
 @tasks.loop(seconds = 15)
 async def check_for_updates():
      filtered_anime = helper.filter_by_genre(anime_list, helper.get_filters())
-
+     print("filtered: ", end=" ")
+     print(filtered_anime)
      for anime in filtered_anime:
          if helper.just_aired(anime):
+            print(anime.datetime_aired)
             await send_notifications(anime)
 
 def create_embeded_message(name, genres, rating, link, day_aired, time_aired, latest_episode, image):
     embed_var = discord.Embed(title="Episode " + latest_episode + " of " + name + " Just Came Out!", description="Watch here: " + link, color=0xF78C25)
     embed_var.add_field(name="__Day Aired__", value=day_aired, inline=True)
     embed_var.add_field(name="__Time Aired__", value=time_aired, inline=True)
-    embed_var.add_field(name="__Rating(9.4)__", value=rating * "⭐", inline=True)
+    embed_var.add_field(name="__Rating (" + str(float(rating) / 2) + ")__", value=round(float(rating) / 2) * "⭐", inline=True)
     embed_var.add_field(name="__Genre__", value=genres, inline=True)
     embed_var.set_image(url = image)
     return embed_var
 
 async def send_notifications(anime):
 
-    date = anime.datetime_aired().strftime("%d/%m/%y")
-    time = anime.datetime_aired().strftime("%I:%M %p")
-    stars = round(int(anime.rating))
+    date = anime.datetime_aired.strftime("%d/%m/%y")
+    time = anime.datetime_aired.strftime("%I:%M %p")
 
     channel = client.get_channel(CHANNEL_ID)
-    embed_message = create_embeded_message(anime.name, anime.genres, round(stars / 2), anime.crunchyroll_url, date, time, 3, anime.image_url)
+    embed_message = create_embeded_message(anime.name, anime.genres, anime.rating, anime.crunchyroll_url, date, time, "3", anime.image_url)
     await channel.send(embed = embed_message)
 
 @client.event

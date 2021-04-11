@@ -46,14 +46,14 @@ def get_genre_arr(genres):
 # returns array of anime names being tracking
 def get_tracked():
     f = open('config.json', 'r')
-    tracked = json.load(f)
-    return tracked
+    data = json.load(f)
+    return data["tracking"]
 
 # returns array of genre filters being used
 def get_filters():
     f = open('config.json', 'r') 
-    filters = json.load(f)
-    return filters
+    data = json.load(f)
+    return data["filters"]
 
 # adds given filter to the filters array in json file
 # iff the given filter is not already present
@@ -117,8 +117,8 @@ def remove_tracked(anime_name):
 
 # returns true if anime was just released, false otherwise
 def just_aired(anime):
-    curr_day = datetime.today().strftime("%A")
-    curr_time = datetime.now().time().replace(second=0, microsecond=0)
+    curr_day = datetime.datetime.today().strftime("%A")
+    curr_time = datetime.datetime.now().time().replace(second=0, microsecond=0)
 
     anime_air_day = anime.datetime_aired.strftime("%A")
     anime_air_time = anime.datetime_aired.time()
