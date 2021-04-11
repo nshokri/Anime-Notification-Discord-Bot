@@ -1,0 +1,314 @@
+------------------------------------------------------------------
+Name: Backflip!!
+Airing Time:  2021-04-08 10:25:00
+Genres: ['Sports']
+Ratings: 7.481
+MAL URL: https://myanimelist.net/anime/43756
+Crunchyroll URL: https://www.crunchyroll.com//backflip
+Image URL: https://img1.ak.crunchyroll.com/i/spire1/15b35e5cf3fd093768e9c0593decf07b1617881146_thumb.jpg
+------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------
+Name: BORUTO: NARUTO NEXT GENERATIONS
+Airing Time:  2017-04-05 03:00:00
+Genres: ['Action', 'Adventure', 'Super Power', 'Martial Arts', 'Shounen']
+Ratings: 5.791
+MAL URL: https://myanimelist.net/anime/34566/Boruto__Naruto_Next_Generations
+Crunchyroll URL: https://www.crunchyroll.com//boruto-naruto-next-generations
+Image URL: https://img1.ak.crunchyroll.com/i/spire4/7dde3a40ce5d5615813a5ac12683631a1616450115_thumb.jpg
+------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------
+Name: Burning Kabaddi
+Airing Time:  2021-04-02 10:53:00
+Genres: ['Sports']
+Ratings: 7.181
+MAL URL: https://myanimelist.net/anime/42395
+Crunchyroll URL: https://www.crunchyroll.com//burning-kabaddi
+Image URL: https://img1.ak.crunchyroll.com/i/spire2/883bb90804a00b9bec017a155fb359551617354961_thumb.jpg
+------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------
+Name: CARDFIGHT!! VANGUARD overDress
+Airing Time:  2021-04-02 17:30:00
+Genres: ['Action', 'Game']
+Ratings: 6.281
+MAL URL: https://myanimelist.net/anime/42516
+Crunchyroll URL: https://www.crunchyroll.com//cardfight-vanguard-overdress
+Image URL: https://img1.ak.crunchyroll.com/i/spire4/318658ca7b4e136e45b4280d8e5d2e881617386104_thumb.jpg
+------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------
+Name: Case Closed
+Airing Time:  1996-01-08 03:30:00
+Genres: ['Adventure', 'Mystery', 'Comedy', 'Police', 'Shounen']
+Ratings: 8.161
+MAL URL: https://myanimelist.net/anime/235
+Crunchyroll URL: https://www.crunchyroll.com//case-closed
+Image URL: https://img1.ak.crunchyroll.com/i/spire4/668ee826ecb23c5c669ef67f4c3f12ff1603757207_thumb.jpg
+------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------
+Name: Cells at Work! CODE BLACK
+Airing Time:  2021-01-09 09:30:00
+Genres: ['Action', 'Drama', 'Seinen']
+Ratings: 7.561
+MAL URL: https://myanimelist.net/anime/41694
+Crunchyroll URL: https://www.crunchyroll.com//cells-at-work-code-black
+Image URL: https://img1.ak.crunchyroll.com/i/spire2/7236ae66f6a7f30ac0427ec01c6e10d71612461958_thumb.jpg
+------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------
+Name: Digimon Adventure: (2020)
+Airing Time:  2020-04-04 18:30:00
+Genres: ['Action', 'Adventure', 'Comedy', 'Fantasy', 'Kids']
+Ratings: 6.711
+MAL URL: https://myanimelist.net/anime/41074
+Crunchyroll URL: https://www.crunchyroll.com//digimon-adventure-2020
+Image URL: https://img1.ak.crunchyroll.com/i/spire2/4dd9e4a8c791dad5b1620a15de09be461586045586_thumb.jpg
+------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------
+Name: Dragon Quest: The Adventure of Dai
+Airing Time:  2020-10-02 19:00:00
+Genres: ['Action', 'Adventure', 'Fantasy', 'Shounen']
+Ratings: 7.081
+MAL URL: https://myanimelist.net/anime/40906
+Crunchyroll URL: https://www.crunchyroll.com//dragon-quest-the-adventure-of-dai
+Image URL: https://img1.ak.crunchyroll.com/i/spire1/2dfdac3e9a82ae6b112e590ffc3f44531601686734_thumb.jpg
+------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------
+Name: Fairy Ranmaru
+Airing Time:  2021-04-08 08:30:00
+Genres: ['Action', 'Slice of Life', 'Magic', 'School']
+Ratings: 5.571
+MAL URL: https://myanimelist.net/anime/45665
+Crunchyroll URL: https://www.crunchyroll.com//fairy-ranmaru
+Image URL: https://img1.ak.crunchyroll.com/i/spire1/e87f03c93b806d8f63782b20cec3098a1617812864_thumb.jpg
+------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------
+Name: Farewell, My Dear Cramer
+Airing Time:  2021-04-04 09:00:00
+Genres: ['Sports', 'Drama', 'Shounen']
+Ratings: 6.421
+MAL URL: https://myanimelist.net/anime/42774
+Crunchyroll URL: https://www.crunchyroll.com//farewell-my-dear-cramer
+Image URL: https://img1.ak.crunchyroll.com/i/spire4/cf70ad4ec6bef935929e45ca0ad86e151617503978_thumb.jpg
+------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------
+Name: Fruits Basket
+Airing Time:  2001-07-05 03:30:00
+Genres: ['Slice of Life', 'Comedy', 'Supernatural', 'Drama', 'Romance', 'Shoujo']
+Ratings: 7.691
+MAL URL: https://myanimelist.net/anime/120
+Crunchyroll URL: https://www.crunchyroll.com//fruits-basket
+Image URL: https://img1.ak.crunchyroll.com/i/spire4/2ed7860327c766f1cad10c73338a61a91617747114_thumb.jpg
+------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------
+Name: Higehiro: After Being Rejected, I Shaved and Took in a High School Runaway
+Airing Time:  2021-04-05 08:00:00
+Genres: ['Drama', 'Romance']
+Ratings: 7.871
+MAL URL: https://myanimelist.net/anime/40938
+Crunchyroll URL: https://www.crunchyroll.com//higehiro-after-being-rejected-i-shaved-and-took-in-a-high-school-runaway
+Image URL: https://img1.ak.crunchyroll.com/i/spire2/1739ef035b0dd4de70ad1f92c6ca18951617610429_thumb.jpg
+------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------
+Name: How Not to Summon a Demon Lord
+Airing Time:  2018-07-05 07:00:00
+Genres: ['Comedy', 'Ecchi', 'Fantasy', 'Harem', 'Magic']
+Ratings: 6.951
+MAL URL: https://myanimelist.net/anime/37210
+Crunchyroll URL: https://www.crunchyroll.com//how-not-to-summon-a-demon-lord
+Image URL: https://img1.ak.crunchyroll.com/i/spire2/0af3e3b13d3b9371c338a66878cff6151530795404_thumb.jpg
+------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------
+Name: JORAN THE PRINCESS OF SNOW AND BLOOD
+Airing Time:  2021-04-06 10:59:00
+Genres: ['Action', 'Historical', 'Supernatural']
+Ratings: 6.741
+MAL URL: https://myanimelist.net/anime/47250
+Crunchyroll URL: https://www.crunchyroll.com//joran-the-princess-of-snow-and-blood
+Image URL: https://img1.ak.crunchyroll.com/i/spire4/722a8c7f74fdb72d3219424b34f7a5001617089506_thumb.jpg
+------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------
+Name: Koikimo
+Airing Time:  2021-04-05 07:30:00
+Genres: ['Comedy', 'Romance']
+Ratings: 7.071
+MAL URL: https://myanimelist.net/anime/41103
+Crunchyroll URL: https://www.crunchyroll.com//koikimo
+Image URL: https://img1.ak.crunchyroll.com/i/spire1/ebd9987e75ada1595d044faca6e70d8a1616987371_thumb.jpg
+------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------
+Name: Let's Make a Mug Too
+Airing Time:  2021-04-02 10:25:00
+Genres: ['Slice of Life']
+Ratings: 6.861
+MAL URL: https://myanimelist.net/anime/42568
+Crunchyroll URL: https://www.crunchyroll.com//lets-make-a-mug-too
+Image URL: https://img1.ak.crunchyroll.com/i/spire1/34584acd5ab239a0539d5d3a856bf61e1617519078_thumb.jpg
+------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------
+Name: Miss Kobayashi's Dragon Maid
+Airing Time:  2017-01-11 09:30:00
+Genres: ['Slice of Life', 'Comedy', 'Fantasy']
+Ratings: 8.011
+MAL URL: https://myanimelist.net/anime/33206
+Crunchyroll URL: https://www.crunchyroll.com//miss-kobayashis-dragon-maid
+Image URL: https://img1.ak.crunchyroll.com/i/spire1/c4cf4a91a0bca77f1a0954ddd48a2e8c1532552925_thumb.jpg
+------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------
+Name: My Hero Academia
+Airing Time:  2016-04-03 02:30:00
+Genres: ['Action', 'Comedy', 'School', 'Shounen', 'Super Power']
+Ratings: 8.071
+MAL URL: https://myanimelist.net/anime/31964
+Crunchyroll URL: https://www.crunchyroll.com//my-hero-academia
+Image URL: https://img1.ak.crunchyroll.com/i/spire3/137c90ecc4fae013811fab5275b307791617056778_thumb.jpg
+------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------
+Name: ODDTAXI
+Airing Time:  2021-04-05 11:30:00
+Genres: ['Mystery']
+Ratings: 7.331
+MAL URL: https://myanimelist.net/anime/46102
+Crunchyroll URL: https://www.crunchyroll.com//oddtaxi
+Image URL: https://img1.ak.crunchyroll.com/i/spire4/d2e54e88d519597cafee830d7b34dea21617602847_thumb.jpg
+------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------
+Name: One Piece
+Airing Time:  1999-10-19 19:00:00
+Genres: ['Action', 'Adventure', 'Comedy', 'Super Power', 'Drama', 'Fantasy', 'Shounen']
+Ratings: 8.531
+MAL URL: https://myanimelist.net/anime/21
+Crunchyroll URL: https://www.crunchyroll.com//one-piece
+Image URL: https://img1.ak.crunchyroll.com/i/spire4/8056a82e973dde98ebb82abd39dc69731564519729_thumb.jpg
+------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------
+Name: SEVEN KNIGHTS REVOLUTION: Hero Successor
+Airing Time:  2021-04-04 09:30:00
+Genres: ['Action', 'Adventure', 'Magic', 'Fantasy']
+Ratings: 6.381
+MAL URL: https://myanimelist.net/anime/47391
+Crunchyroll URL: https://www.crunchyroll.com//seven-knights-revolution-hero-successor
+Image URL: https://img1.ak.crunchyroll.com/i/spire2/cb4f88c75d7375e324c936b6943080c51617502727_thumb.jpg
+------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------
+Name: So I'm a Spider, So What?
+Airing Time:  2021-01-08 07:00:00
+Genres: ['Action', 'Adventure', 'Mystery', 'Comedy', 'Magic', 'Fantasy']
+Ratings: 7.241
+MAL URL: https://myanimelist.net/anime/37984
+Crunchyroll URL: https://www.crunchyroll.com//so-im-a-spider-so-what
+Image URL: https://img1.ak.crunchyroll.com/i/spire3/3952cc8186b2e2a7ea11f8283ca0c8951617747268_thumb.jpg
+------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------
+Name: The Slime Diaries
+Airing Time:  2021-04-06 08:30:00
+Genres: ['Slice of Life', 'Comedy', 'Fantasy', 'Shounen']
+Ratings: 7.641
+MAL URL: https://myanimelist.net/anime/41488
+Crunchyroll URL: https://www.crunchyroll.com//the-slime-diaries
+Image URL: https://img1.ak.crunchyroll.com/i/spire3/a2cd0f3d28abb94c6633041ecc80be9f1617701397_thumb.jpg
+------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------
+Name: Those Snow White Notes
+Airing Time:  2021-04-02 11:55:00
+Genres: ['Music', 'Slice of Life', 'Drama', 'School', 'Shounen']
+Ratings: 7.641
+MAL URL: https://myanimelist.net/anime/42590
+Crunchyroll URL: https://www.crunchyroll.com//those-snow-white-notes
+Image URL: https://img1.ak.crunchyroll.com/i/spire3/805fabf56ab70842766d76c1a50cf2061617327655_thumb.jpg
+------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------
+Name: Tropical-Rouge! Precure
+Airing Time:  2021-02-27 18:00:00
+Genres: ['Action', 'Fantasy', 'Magic', 'Shoujo']
+Ratings: 7.261
+MAL URL: https://myanimelist.net/anime/44191
+Crunchyroll URL: https://www.crunchyroll.com//tropical-rouge-precure
+Image URL: https://img1.ak.crunchyroll.com/i/spire1/8bf5af626c85bc28c31563c28ba9842c1614467425_thumb.jpg
+------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------
+Name: ZOMBIE LAND SAGA
+Airing Time:  2018-10-04 09:00:00
+Genres: ['Comedy', 'Music', 'Supernatural']
+Ratings: 7.511
+MAL URL: https://myanimelist.net/anime/37976
+Crunchyroll URL: https://www.crunchyroll.com//zombie-land-saga
+Image URL: https://img1.ak.crunchyroll.com/i/spire4/fa152294500d068e6a0c19086dc000b21538634514_thumb.jpg
+------------------------------------------------------------------
+
+
+
+Total runtime:  0:01:43.057255
+Anime Count: 26
