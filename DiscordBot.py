@@ -24,8 +24,11 @@ async def check_for_updates(anime_list):
     print(filtered_anime)
     for anime in filtered_anime:
         if helper.just_aired(anime):
+            anime_list.remove(anime)
             print(anime.datetime_aired)
             await send_notifications(anime)
+    if len(anime_list) == 0:
+        check_for_updates.stop()
 
 def create_embeded_message(name, genres, rating, link, day_aired, time_aired, latest_episode, image):
     embed_var = discord.Embed(title="Episode " + latest_episode + " of \"" + name + "\" Just Came Out!", description="Watch here: " + link, color=0xF78C25)
@@ -88,7 +91,7 @@ async def on_message(message):
             await message.channel.send("**" + genre + "** *is not currently included in filter*")
 
     elif command.startswith("!test"):
-        await message.channel.send("*Queuing 2 animes to air in 1 minute*")
+        await message.channel.send("*Queuing 2 anime to air in 1 minute*")
         check_for_updates.start(ws.dummy())
 
     elif command.startswith("!help"):
