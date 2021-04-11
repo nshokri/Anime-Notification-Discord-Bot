@@ -48,7 +48,11 @@ class Webscraper:
         #TODO: Might possibly have a query error here
         remove_after = []
         for i in range(len(output)):
-            for n in self.google_search(output[i].name + ' myanimelist'):
+            search = self.google_search(output[i].name + ' myanimelist')
+            print(search)
+            found = False
+
+            for n in search:
                 if (n.find('https://myanimelist.net/anime/') != -1):
                     
                     # Get last season
@@ -61,6 +65,10 @@ class Webscraper:
                     # Remove once out of loop
                     if self.get_property(soup, 'span', 'Type:', 'dark_text', True).find('TV') == -1 or self.get_property(soup, 'div', 'Aired:', 'spaceit', False) == None or self.get_property(soup, 'div', 'Broadcast:', 'spaceit', False) == None:
                         remove_after.append(i)
+                        print('Removing: ' + str(i))
+                        print(self.get_property(soup, 'span', 'Type:', 'dark_text', True).find('TV') == -1)
+                        print(self.get_property(soup, 'div', 'Aired:', 'spaceit', False) == None)
+                        print(self.get_property(soup, 'div', 'Broadcast:', 'spaceit', False) == None)
                         break
 
                     # Get airing datetime
@@ -75,9 +83,12 @@ class Webscraper:
                     output[i].genres = get_genre_arr(self.get_property(soup, 'span', 'Genres:', 'dark_text', True))
 
                     print(output[i].mal_url)
+                    found = True
                     break
-                else:
-                    remove_after.append(i)
+            
+            if not found:
+                remove_after.append(i)
+                print('Remove 2: ' + str(i))
 
         # Recreate array, ignoring elements that should have been removed
         new_output = []
@@ -102,7 +113,7 @@ class Webscraper:
             print('------------------------------------------------------------------\n\n\n')
 
         print('Total runtime: ', end = ' ')
-        print(datetime.now - start)
+        print(datetime.now() - start)
         print('Anime Count: ' + len(output))
 
         return output
