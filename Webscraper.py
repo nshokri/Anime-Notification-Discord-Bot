@@ -234,6 +234,17 @@ class Webscraper:
 
                 return ' '.join(prop).strip()
 
+    def dummy(self):
+        test_anime = anime_card.Anime('Those Snow White Notes', 'https://myanimelist.net/anime/42590/Mashiro_no_Oto/episode')
+        test_anime.mal_url = 'https://myanimelist.net/anime/42590/Mashiro_no_Oto/episode'
+        test_anime.crunchyroll_url = 'https://www.crunchyroll.com/those-snow-white-notes'
+        test_anime.image_url = 'https://img1.ak.crunchyroll.com/i/spire3/805fabf56ab70842766d76c1a50cf2061617327655_thumb.jpg'
+        test_anime.rating = '5.65'
+        test_anime.genre = ['Music', 'Slice of Life', 'Drama', 'School', 'Shounen']
+        test_anime.datetime_aired = (datetime.datetime.now() + datetime.timedelta(minutes=1)).replace(second=0, microsecond=0)
+
+        return [test_anime]
+
 #w = Webscraper()
 #temp = w.get_seasonal_anime(0, 0)
 '''
