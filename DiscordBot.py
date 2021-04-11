@@ -3,21 +3,23 @@ from discord.ext import commands, tasks
 from Webscraper import Webscraper
 import time
 import helper
+import os
 
 REFRESH_RATE = 10
 CHANNEL_ID = 830901954963963934
-TOKEN = "ODMwMjM0MTA1ODk1MTkwNTU5.YHDtww.FiNA3g2KK3luTIXWz1QmLjgPhvQ"
 
 client = discord.Client()
 ws = Webscraper()
 #anime_list = ws.get_seasonal_anime(0, 0)
 
+
 @client.event
 async def on_ready():
     print("Bot is online")
-    #check_for_updates.start()
+    # check_for_updates.start()
 
-@tasks.loop(seconds = REFRESH_RATE)
+
+@tasks.loop(seconds=REFRESH_RATE)
 async def check_for_updates(anime_list):
     filtered_anime = helper.filter_by_genre(anime_list, helper.get_filters())
     print("filtered: ", end=" ")
@@ -30,14 +32,18 @@ async def check_for_updates(anime_list):
     if len(anime_list) == 0:
         check_for_updates.stop()
 
+
 def create_embeded_message(name, genres, rating, link, day_aired, time_aired, latest_episode, image):
-    embed_var = discord.Embed(title="Episode " + latest_episode + " of \"" + name + "\" Just Came Out!", description="Watch here: " + link, color=0xF78C25)
+    embed_var = discord.Embed(title="Episode " + latest_episode + " of \"" + name +
+                              "\" Just Came Out!", description="Watch here: " + link, color=0xF78C25)
     embed_var.add_field(name="__Day Aired__", value=day_aired, inline=True)
     embed_var.add_field(name="__Time Aired__", value=time_aired, inline=True)
-    embed_var.add_field(name="__Rating (" + str(round(float(rating) / 2, 2)) + "/5)__", value=round(float(rating) / 2) * "⭐", inline=True)
+    embed_var.add_field(name="__Rating (" + str(round(float(rating) / 2, 2)) +
+                        "/5)__", value=round(float(rating) / 2) * "⭐", inline=True)
     embed_var.add_field(name="__Genre__", value=genres, inline=True)
-    embed_var.set_image(url = image)
+    embed_var.set_image(url=image)
     return embed_var
+
 
 async def send_notifications(anime):
 
@@ -53,14 +59,16 @@ async def send_notifications(anime):
         genres = "N/A"
 
     channel = client.get_channel(CHANNEL_ID)
-    embed_message = create_embeded_message(anime.name, genres, anime.rating, anime.crunchyroll_url, date, time, str(helper.get_last_episode(anime)), anime.image_url)
-    await channel.send(embed = embed_message)
+    embed_message = create_embeded_message(anime.name, genres, anime.rating, anime.crunchyroll_url, date, time, str(
+        helper.get_last_episode(anime)), anime.image_url)
+    await channel.send(embed=embed_message)
+
 
 @client.event
 async def on_message(message):
     if message.author == client.user:
         return
-    
+
     command = message.content
     if command.startswith("!track"):
         anime_name = command[int(command.index(" ") + 1):]
@@ -68,7 +76,7 @@ async def on_message(message):
             await message.channel.send("*Now Tracking* " + "**" + anime_name + "**")
         else:
             await message.channel.send("**" + anime_name + "** *is already being tracked*")
-    
+
     elif command.startswith("!untrack"):
         anime_name = command[int(command.index(" ") + 1):]
         if helper.remove_tracked(anime_name):
@@ -82,7 +90,7 @@ async def on_message(message):
             await message.channel.send("*Now including* **" + genre + "** *in filter*")
         else:
             await message.channel.send("**" + genre + "** *is already included in filter*")
-    
+
     elif command.startswith("!removeg"):
         genre = command[int(command.index(" ") + 1):]
         if helper.remove_filter(genre):
@@ -95,11 +103,16 @@ async def on_message(message):
         check_for_updates.start(ws.dummy())
 
     elif command.startswith("!help"):
-        embed_var = discord.Embed(title="Current Command List", description="", color=0xF78C25)
-        embed_var.add_field(name="```!track [Anime Name]```", value="Tracks an anime and notifies the server when a new episode comes out", inline=False)
-        embed_var.add_field(name="```!untrack [Anime Name]```", value="Removes an anime from tracking list", inline=False)
-        embed_var.add_field(name="```!addg [Genre]```", value="Adds a genre to the filter", inline=False)
-        embed_var.add_field(name="```!removeg [Genre]```", value="Removes a genre to the filter", inline=False)
-        await message.channel.send(embed = embed_var)
+        embed_var = discord.Embed(
+            title="Current Command List", description="", color=0xF78C25)
+        embed_var.add_field(
+            name="```!track [Anime Name]```", value="Tracks an anime and notifies the server when a new episode comes out", inline=False)
+        embed_var.add_field(
+            name="```!untrack [Anime Name]```", value="Removes an anime from tracking list", inline=False)
+        embed_var.add_field(
+            name="```!addg [Genre]```", value="Adds a genre to the filter", inline=False)
+        embed_var.add_field(
+            name="```!removeg [Genre]```", value="Removes a genre to the filter", inline=False)
+        await message.channel.send(embed=embed_var)
 
-client.run(TOKEN)
+client.run(os.getenv("TOKEN"))
