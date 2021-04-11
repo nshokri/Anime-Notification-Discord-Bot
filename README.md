@@ -11,7 +11,7 @@ Create a live-time notification bot that lets users know when a new episode of t
 1) Live demo during presentation
 2) You can find all the data we collected from webscraping in the _"Web Scraped Data.txt"_ file in the repo
 
-# Implementation Detais
+# Implementation Details
 
 **Language:** Python
 ## Modules:
