@@ -244,6 +244,7 @@ class Webscraper:
         result.append(test_anime2)
         return result
 
+'''
 w = Webscraper()
 
 #temp = w.get_seasonal_anime(0, 0)
@@ -268,4 +269,3 @@ test_anime.datetime_aired = datetime.datetime(2020, 10, 3, 1, 25)
 #print(w.get_property(soup, 'div', 'Aired:', 'spaceit', False))
 #print(w.get_property(soup, 'div', 'Broadcast:', 'spaceit', False))
 #print(parse_datetime(, self.get_property(soup, 'span', 'Broadcast:', 'dark_text', False)))
-'''

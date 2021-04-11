@@ -19,11 +19,11 @@ async def on_ready():
 
 @tasks.loop(seconds = REFRESH_RATE)
 async def check_for_updates():
-     filtered_anime = helper.filter_by_genre(anime_list, helper.get_filters())
-     print("filtered: ", end=" ")
-     print(filtered_anime)
-     for anime in filtered_anime:
-         if helper.just_aired(anime):
+    filtered_anime = helper.filter_by_genre(anime_list, helper.get_filters())
+    print("filtered: ", end=" ")
+    print(filtered_anime)
+    for anime in filtered_anime:
+        if helper.just_aired(anime):
             print(anime.datetime_aired)
             await send_notifications(anime)
 
@@ -46,6 +46,8 @@ async def send_notifications(anime):
             genres += anime.genres[i]
             if i != len(anime.genres) - 1:
                 genres += ", "
+    else:
+        genres = "N/A"
 
     channel = client.get_channel(CHANNEL_ID)
     embed_message = create_embeded_message(anime.name, genres, anime.rating, anime.crunchyroll_url, date, time, str(helper.get_last_episode(anime)), anime.image_url)
